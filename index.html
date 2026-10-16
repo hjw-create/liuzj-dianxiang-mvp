@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>配电箱巡检与跳闸记录 · 刘治江</title>
+<style>
+body{font-family:"Microsoft YaHei",sans-serif;margin:0;background:#f4f6f8;color:#1c2430}
+.wrap{max-width:680px;margin:0 auto;padding:20px}
+h1{font-size:22px;margin:0 0 8px}
+.card{background:#fff;border-radius:10px;padding:16px;margin:12px 0;box-shadow:0 1px 4px #0001}
+.warn{background:#fff4e5;border-left:4px solid #e07a00}
+button,input[type=submit]{background:#1f6feb;color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:16px}
+label{display:block;margin:8px 0}
+.ok{color:#0a7a32;font-weight:700}
+small{color:#667}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>跳闸说得清，巡检不靠记</h1>
+<p>给乡镇小冷库 / 大棚的配电主责人：一页五项巡检 + 一张跳闸记录。学号 2024188033 · 刘治江</p>
+<div class="card warn"><strong>边界：</strong>不接电工施工、不卖配电柜/传感器、不远程合闸。带电作业请找持证电工。</div>
+<div class="card">
+<h2>现场原话（第3周访谈整理）</h2>
+<p>「夜里一跳闸先合上，怕货坏了，回头电工问啥我也说不清。」</p>
+<p>「巡检就是看一眼有没有异味，具体项记不住。」</p>
+<p>「表行，别超过两分钟，先免费用，别一上来让我装传感器。」</p>
+</div>
+<div class="card">
+<h2>三步</h2>
+<ol>
+<li>打开本页，勾选今天巡检五项。</li>
+<li>若跳闸，记下时间、当时负载、有无异味、是否已联系电工。</li>
+<li>把记录给电工复盘，不要自己改线。</li>
+</ol>
+<form id="f">
+<label><input type="checkbox" name="c"/> 箱门关闭、无焦糊味</label>
+<label><input type="checkbox" name="c"/> 指示灯/空开位置看过</label>
+<label><input type="checkbox" name="c"/> 电缆孔无进水</label>
+<label><input type="checkbox" name="c"/> 接地线在</label>
+<label><input type="checkbox" name="c"/> 周围无可燃杂物</label>
+<label>手机（预约两周试填，选填）<br/><input name="phone" placeholder="11位手机"/></label>
+<button type="submit">提交今日巡检</button>
+</form>
+<p id="msg"></p>
+</div>
+<small>本页为课程 MVP 静态页，数据只留在你的浏览器，不上传服务器。</small>
+</div>
+<script>
+document.getElementById('f').onsubmit=function(e){
+  e.preventDefault();
+  document.getElementById('msg').className='ok';
+  document.getElementById('msg').textContent='已记录在本机。请把要点转告电工，不要自行合闸改线。';
+};
+</script>
+</body>
+</html>
